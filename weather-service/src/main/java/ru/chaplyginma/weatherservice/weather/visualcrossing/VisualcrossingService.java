@@ -8,6 +8,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
+import ru.chaplyginma.weatherservice.trackexecutiontime.annotation.TrackAsyncTime;
+import ru.chaplyginma.weatherservice.trackexecutiontime.annotation.TrackTime;
 
 import java.net.URI;
 import java.util.concurrent.CompletableFuture;
@@ -17,6 +19,7 @@ public class VisualcrossingService {
     private static final String API_URL = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
     private static final String API_KEY = "B64BZHVMD5Q9HVD6L748HYU67";
 
+    @TrackTime
     public String getCityTemperature(String city) {
         RestTemplate restTemplate = new RestTemplate();
         URI uri = UriComponentsBuilder
@@ -40,6 +43,7 @@ public class VisualcrossingService {
 
     }
 
+    @TrackAsyncTime
     @Async
     public CompletableFuture<String> asyncGetCityTemperature(String city) {
         RestTemplate restTemplate = new RestTemplate();

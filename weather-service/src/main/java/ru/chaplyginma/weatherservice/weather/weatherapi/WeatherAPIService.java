@@ -8,6 +8,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
+import ru.chaplyginma.weatherservice.trackexecutiontime.annotation.TrackAsyncTime;
+import ru.chaplyginma.weatherservice.trackexecutiontime.annotation.TrackTime;
 
 import java.net.URI;
 import java.util.concurrent.CompletableFuture;
@@ -17,6 +19,7 @@ public class WeatherAPIService {
     private static final String API_URL = "http://api.weatherapi.com/v1/current.json";
     private static final String API_KEY = "6fb756f62b964c8181c211013240705";
 
+    @TrackTime
     public String getCityTemperature(String city) {
         RestTemplate restTemplate = new RestTemplate();
         URI uri = UriComponentsBuilder
@@ -37,6 +40,7 @@ public class WeatherAPIService {
 
     }
 
+    @TrackAsyncTime
     @Async
     public CompletableFuture<String> asyncGetCityTemperature(String city) {
         RestTemplate restTemplate = new RestTemplate();
