@@ -25,7 +25,7 @@ public class TrackTimeAspect {
             result = joinPoint.proceed();
 
             long executionTime = System.currentTimeMillis() - startTime;
-            log.info("Class '{}', method '{}', time '{}'", joinPoint.getTarget().getClass().getName(), joinPoint.getSignature().getName(), executionTime);
+            log.info("\tClass '{}', method '{}', time '{}'", joinPoint.getTarget().getClass().getName(), joinPoint.getSignature().getName(), executionTime);
 
         } catch (Throwable e) {
             log.error("Ошибка '{}' при выполнении метода '{}'", e.getMessage(), joinPoint.getTarget().getClass().getName() + "." + joinPoint.getSignature().getName());

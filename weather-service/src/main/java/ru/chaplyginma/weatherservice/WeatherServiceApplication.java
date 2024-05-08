@@ -24,8 +24,6 @@ public class WeatherServiceApplication {
         weatherService.printForCity("Moscow");
         weatherService.asyncPrintForCity("Rostov-on-Don");
         weatherService.printForCity("Rostov-on-Don");
-        System.exit(0);
     }
-
 
 }

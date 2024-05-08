@@ -20,17 +20,17 @@ public class WeatherService {
 
     @TrackTime
     public void printForCity(String city) {
-        log.info("Sync weatherAPI. {}: {} ℃", city, weatherAPIService.getCityTemperature(city));
-        log.info("Sync visualcrossing. {}: {} ℃", city, visualcrossingService.getCityTemperature(city));
+        log.info("Sync weatherAPI. {}: {} C", city, weatherAPIService.getCityTemperature(city));
+        log.info("Sync visualcrossing. {}: {} C", city, visualcrossingService.getCityTemperature(city));
     }
 
     @TrackAsyncTime
     @Async
     public void asyncPrintForCity(String city) {
         CompletableFuture<String> weatherAPIFutureResult = weatherAPIService.asyncGetCityTemperature(city);
-        weatherAPIFutureResult.thenAccept(result -> log.info("Async weatherAPI. {}: {} ℃", city, result));
+        weatherAPIFutureResult.thenAccept(result -> log.info("Async weatherAPI. {}: {} C", city, result));
 
         CompletableFuture<String> visualcrossingFutureResult = visualcrossingService.asyncGetCityTemperature(city);
-        visualcrossingFutureResult.thenAccept(result -> log.info("Async visualcrossing. {}: {} ℃", city, result));
+        visualcrossingFutureResult.thenAccept(result -> log.info("Async visualcrossing. {}: {} C", city, result));
     }
 }
