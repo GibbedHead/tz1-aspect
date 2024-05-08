@@ -19,9 +19,11 @@ public class MetricsClient {
     private String tracktimeAPIUrl;
 
     public void logExecutionTime(ProceedingJoinPoint joinPoint, long executionTime) {
+        String className = joinPoint.getSignature().getDeclaringTypeName();
+        String methodName = joinPoint.getSignature().getName();
         AddMethodExecutionDto addMethodExecutionDto = new AddMethodExecutionDto(
-                joinPoint.getTarget().getClass().getName(),
-                joinPoint.getSignature().getName(),
+                className,
+                methodName,
                 executionTime,
                 LocalDateTime.now()
         );
@@ -33,7 +35,12 @@ public class MetricsClient {
                 .body(BodyInserters.fromValue(addMethodExecutionDto))
                 .retrieve()
                 .bodyToMono(String.class)
-                .doOnError(error -> log.error("An error has occurred during add hit request {}", error.getMessage()))
-                .block();
+                .subscribe(
+                        response -> log.info("Metrics for method '{}' saved successfully", methodName),
+                        error -> log.error(
+                                "Metrics for method '{}' save failed. Error: {}",
+                                methodName,
+                                error.getMessage())
+                );
     }
 }
