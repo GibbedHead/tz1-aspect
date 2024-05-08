@@ -26,11 +26,15 @@ public class WeatherService {
 
     @TrackAsyncTime
     @Async
-    public void asyncPrintForCity(String city) {
+    public CompletableFuture<Void> asyncPrintForCity(String city) {
         CompletableFuture<String> weatherAPIFutureResult = weatherAPIService.asyncGetCityTemperature(city);
-        weatherAPIFutureResult.thenAccept(result -> log.info("Async weatherAPI. {}: {} C", city, result));
-
         CompletableFuture<String> visualcrossingFutureResult = visualcrossingService.asyncGetCityTemperature(city);
-        visualcrossingFutureResult.thenAccept(result -> log.info("Async visualcrossing. {}: {} C", city, result));
+
+        return CompletableFuture.allOf(weatherAPIFutureResult, visualcrossingFutureResult)
+                .thenAcceptAsync(ignored ->
+                        log.info("Async weatherAPI. {}: {} C", city, weatherAPIFutureResult.join())
+                ).thenAcceptAsync(ignored ->
+                        log.info("Async visualcrossing. {}: {} C", city, visualcrossingFutureResult.join())
+                );
     }
 }
