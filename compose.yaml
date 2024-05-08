@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: metrics
+      POSTGRES_PASSWORD: metrics
+      POSTGRES_USER: metrics
+    ports:
+      - 10001:5432
+    volumes:
+      - ./metrics/src/main/resources/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  statistics:
+    depends_on:
+      - postgres
+    build:
+      context: ./
+      dockerfile: metrics/.docker/java/Dockerfile
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: metrics
+      POSTGRES_PASSWORD: metrics
+      POSTGRES_USER: metrics
+      POSTGRES_VERSION: 16
+      POSTGRES_CHARSET: utf8
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - 10000:10000
