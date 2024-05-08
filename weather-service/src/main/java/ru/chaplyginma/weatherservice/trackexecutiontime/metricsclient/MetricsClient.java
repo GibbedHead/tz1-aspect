@@ -30,7 +30,7 @@ public class MetricsClient {
         WebClient webClient = WebClient.create(tracktimeAPIUrl);
         webClient
                 .post()
-                .uri("/")
+                .uri("")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .body(BodyInserters.fromValue(addMethodExecutionDto))
                 .retrieve()

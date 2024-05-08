@@ -10,7 +10,7 @@ import ru.chaplyginma.metrics.model.MethodExecution;
 import ru.chaplyginma.metrics.service.MethodExecutionService;
 
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping(path = "/metrics")
 @RequiredArgsConstructor
 @Slf4j
 public class MethodExecutionController {
