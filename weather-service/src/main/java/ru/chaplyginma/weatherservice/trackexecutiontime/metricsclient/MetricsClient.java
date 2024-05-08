@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import ru.chaplyginma.weatherservice.trackexecutiontime.dto.AddMethodExecutionDto;
 
 import java.time.LocalDateTime;
@@ -37,10 +38,19 @@ public class MetricsClient {
                 .bodyToMono(String.class)
                 .subscribe(
                         response -> log.info("Metrics for method '{}' saved successfully", methodName),
-                        error -> log.error(
-                                "Metrics for method '{}' save failed. Error: {}",
-                                methodName,
-                                error.getMessage())
+                        error -> {
+                            String errorMessage;
+                            if (error instanceof WebClientResponseException responseException) {
+                                errorMessage = responseException.getResponseBodyAsString();
+                            } else {
+                                errorMessage = error.getMessage();
+                            }
+                            log.error(
+                                    "Metrics for method '{}' save failed. Error: {}",
+                                    methodName,
+                                    errorMessage
+                            );
+                        }
                 );
     }
 }
