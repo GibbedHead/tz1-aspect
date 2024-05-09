@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class AddMethodExecutionDto {
     @NotBlank
