@@ -1,0 +1,843 @@
+{
+	"info": {
+		"_postman_id": "ec171fdd-98b0-4717-9b4f-fbca9f77c93b",
+		"name": "Spring AOP Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33879345"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Classes",
+					"item": [
+						{
+							"name": "VisualcrossingService All Average",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "VisualcrossingService All Total",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService?aggregateType=total",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "total"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherAPIService All Average",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherAPIService All Min",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService?aggregateType=min",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "min"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherService All Average",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.WeatherService",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.WeatherService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherService All Max",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.WeatherService?aggregateType=max",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.WeatherService"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "max"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Classes and Methods",
+					"item": [
+						{
+							"name": "WeatherService.printForCity Average",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.WeatherService/method/printForCity",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.WeatherService",
+										"method",
+										"printForCity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherService.asyncPrintForCity Average",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.WeatherService/method/asyncPrintForCity",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.WeatherService",
+										"method",
+										"asyncPrintForCity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "VisualcrossingService.getCityTemperature Total",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService/method/getCityTemperature?aggregateType=total",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService",
+										"method",
+										"getCityTemperature"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "total"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "VisualcrossingService.asyncGetCityTemperature Total",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService/method/asyncGetCityTemperature?aggregateType=total",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.visualcrossing.VisualcrossingService",
+										"method",
+										"asyncGetCityTemperature"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "total"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherAPIService.getCityTemperature Min",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService/method/getCityTemperature?aggregateType=min",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService",
+										"method",
+										"getCityTemperature"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "min"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WeatherAPIService.asyncGetCityTemperature Min",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/class/ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService/method/asyncGetCityTemperature?aggregateType=min",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"class",
+										"ru.chaplyginma.weatherservice.weather.weatherapi.WeatherAPIService",
+										"method",
+										"asyncGetCityTemperature"
+									],
+									"query": [
+										{
+											"key": "aggregateType",
+											"value": "min"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Add Invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([400]);\r",
+									"});\r",
+									"pm.test(\"Response json have 'message' field containing 'Validation failed'\", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody).to.have.property(\"message\");\r",
+									"    pm.expect(responseBody.message).to.include(\"Validation failed\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"methodName\": \"methodName1\",\r\n    \"executionTime\": \"100\",\r\n    \"executionTimestamp\": \"2016-03-16T13:56:39.492\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Has method execution response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Method execution response 'id' field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"className\": \"SomeClass\",\r\n    \"methodName\": \"SomeMethod\",\r\n    \"executionTime\": \"10\",\r\n    \"executionTimestamp\": \"{{date2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Has method execution response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Method execution response 'id' field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"className\": \"SomeClass\",\r\n    \"methodName\": \"SomeMethod\",\r\n    \"executionTime\": \"100\",\r\n    \"executionTimestamp\": \"{{date3}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Has method execution response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Method execution response 'id' field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"className\": \"SomeClass\",\r\n    \"methodName\": \"SomeMethod\",\r\n    \"executionTime\": \"100\",\r\n    \"executionTimestamp\": \"{{date4}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+									"});\r",
+									"pm.test(\"Has method execution response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Method execution response 'id' field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"className\": \"SomeClass\",\r\n    \"methodName\": \"SomeMethod\",\r\n    \"executionTime\": \"1000\",\r\n    \"executionTimestamp\": \"{{date5}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test SomeClass Average",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Has aggregate response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Average = \", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody.aggregateValue).to.eql(302.5);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/class/SomeClass",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"class",
+								"SomeClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test SomeClass Min",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Has aggregate response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Average = \", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody.aggregateValue).to.eql(10);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/class/SomeClass?aggregateType=min",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"class",
+								"SomeClass"
+							],
+							"query": [
+								{
+									"key": "aggregateType",
+									"value": "min"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test SomeClass Max",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Has aggregate response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Average = \", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody.aggregateValue).to.eql(1000);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/class/SomeClass?aggregateType=max",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"class",
+								"SomeClass"
+							],
+							"query": [
+								{
+									"key": "aggregateType",
+									"value": "max"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test SomeClass Total",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Has aggregate response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Average = \", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody.aggregateValue).to.eql(1210);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/class/SomeClass?aggregateType=total",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"class",
+								"SomeClass"
+							],
+							"query": [
+								{
+									"key": "aggregateType",
+									"value": "total"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test SomeClass Total In Date Range",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+									"});\r",
+									"pm.test(\"Has aggregate response\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test(\"Average = \", function () {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    pm.expect(responseBody.aggregateValue).to.eql(110);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/class/SomeClass?aggregateType=total&startDate={{date1}}&endDate={{date3}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"class",
+								"SomeClass"
+							],
+							"query": [
+								{
+									"key": "aggregateType",
+									"value": "total"
+								},
+								{
+									"key": "startDate",
+									"value": "{{date1}}"
+								},
+								{
+									"key": "endDate",
+									"value": "{{date3}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:10000/v1/metrics",
+			"type": "string"
+		},
+		{
+			"key": "date1",
+			"value": "2024-05-09T12:00:00",
+			"type": "string"
+		},
+		{
+			"key": "date2",
+			"value": "2024-05-09T12:01:00",
+			"type": "string"
+		},
+		{
+			"key": "date3",
+			"value": "2024-05-09T12:02:00",
+			"type": "string"
+		},
+		{
+			"key": "date4",
+			"value": "2024-05-09T12:03:00",
+			"type": "string"
+		},
+		{
+			"key": "date5",
+			"value": "2024-05-09T12:04:00",
+			"type": "string"
+		},
+		{
+			"key": "date6",
+			"value": "2024-05-09T12:05:00",
+			"type": "string"
+		}
+	]
+}
