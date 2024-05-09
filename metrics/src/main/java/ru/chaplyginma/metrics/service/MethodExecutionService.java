@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.chaplyginma.metrics.aggregateType.AggregateType;
 import ru.chaplyginma.metrics.dto.AddMethodExecutionDto;
 import ru.chaplyginma.metrics.dto.ResponseMethodExecutionDto;
@@ -20,6 +21,7 @@ public class MethodExecutionService {
     private final MethodExecutionRepository methodExecutionRepository;
     private final MethodExecutionMapper methodExecutionMapper = Mappers.getMapper(MethodExecutionMapper.class);
 
+    @Transactional
     public MethodExecution save(AddMethodExecutionDto addMethodExecutionDto) {
         MethodExecution savedMethodExecution = methodExecutionRepository.save(
                 methodExecutionRepository.save(
@@ -30,6 +32,7 @@ public class MethodExecutionService {
         return savedMethodExecution;
     }
 
+    @Transactional(readOnly = true)
     public ResponseMethodExecutionDto aggregateExecutionsByClassName(
             String className, LocalDateTime startDate, LocalDateTime endDate, AggregateType aggregateType
     ) {
@@ -48,6 +51,7 @@ public class MethodExecutionService {
         return responseMethodExecutionDto;
     }
 
+    @Transactional(readOnly = true)
     public ResponseMethodExecutionDto aggregateExecutionsByClassNameAndMethodName(
             String className, String methodName, LocalDateTime startDate, LocalDateTime endDate, AggregateType aggregateType
     ) {
