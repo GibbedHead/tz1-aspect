@@ -24,9 +24,7 @@ public class MethodExecutionServiceImpl implements MethodExecutionService {
     @Transactional
     public MethodExecution save(AddMethodExecutionDto addMethodExecutionDto) {
         MethodExecution savedMethodExecution = methodExecutionRepository.save(
-                methodExecutionRepository.save(
-                        methodExecutionMapper.addDtoToMethodExecution(addMethodExecutionDto)
-                )
+                methodExecutionMapper.addDtoToMethodExecution(addMethodExecutionDto)
         );
         log.info("Added method execution: {}", savedMethodExecution);
         return savedMethodExecution;
@@ -57,7 +55,7 @@ public class MethodExecutionServiceImpl implements MethodExecutionService {
         return responseMethodExecutionDto;
     }
 
-    private Double getAggregateValueByClassName(
+    Double getAggregateValueByClassName(
             AggregateType aggregateType,
             String className,
             LocalDateTime startDate,
@@ -73,7 +71,7 @@ public class MethodExecutionServiceImpl implements MethodExecutionService {
         };
     }
 
-    private Double getAggregateValueByClassNameAndMethodName(
+    Double getAggregateValueByClassNameAndMethodName(
             AggregateType aggregateType,
             String className,
             String methodName,
