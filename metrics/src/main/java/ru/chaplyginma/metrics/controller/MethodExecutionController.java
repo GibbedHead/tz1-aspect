@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.chaplyginma.metrics.aggregateType.AggregateType;
 import ru.chaplyginma.metrics.dto.AddMethodExecutionDto;
 import ru.chaplyginma.metrics.dto.ResponseMethodExecutionDto;
+import ru.chaplyginma.metrics.exception.model.ErrorResponse;
 import ru.chaplyginma.metrics.model.MethodExecution;
 import ru.chaplyginma.metrics.service.MethodExecutionService;
 
@@ -33,9 +34,12 @@ public class MethodExecutionController {
             responses = {
                     @ApiResponse(description = "Method execution data saved successfully",
                             responseCode = "201",
-                            content = @Content(schema = @Schema(implementation = MethodExecution.class))),
-                    @ApiResponse(description = "Invalid data provided", responseCode = "400"),
-                    @ApiResponse(description = "Internal server error", responseCode = "500")
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = MethodExecution.class))),
+                    @ApiResponse(
+                            description = "Invalid request",
+                            responseCode = "400",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))
+                    )
             })
     MethodExecution save(
             @Parameter(in = ParameterIn.DEFAULT, description = "Data for adding method execution", schema = @Schema(implementation = AddMethodExecutionDto.class))
@@ -53,10 +57,8 @@ public class MethodExecutionController {
                     @ApiResponse(
                             description = "Aggregate execution data retrieved successfully",
                             responseCode = "200",
-                            content = @Content(schema = @Schema(implementation = ResponseMethodExecutionDto.class))
-                    ),
-                    @ApiResponse(description = "Invalid request or data not found", responseCode = "404"),
-                    @ApiResponse(description = "Internal server error", responseCode = "500")
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMethodExecutionDto.class))
+                    )
             })
     public ResponseMethodExecutionDto getExecutionsByClassNameAndMethodName(
             @Parameter(description = "Name of the class") @PathVariable String className,
@@ -77,10 +79,8 @@ public class MethodExecutionController {
                     @ApiResponse(
                             description = "Aggregate execution data retrieved successfully",
                             responseCode = "200",
-                            content = @Content(schema = @Schema(implementation = ResponseMethodExecutionDto.class))
-                    ),
-                    @ApiResponse(description = "Invalid request or data not found", responseCode = "404"),
-                    @ApiResponse(description = "Internal server error", responseCode = "500")
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMethodExecutionDto.class))
+                    )
             })
     public ResponseMethodExecutionDto getExecutionsByClassName(
             @Parameter(description = "Name of the class") @PathVariable String className,
