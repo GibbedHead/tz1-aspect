@@ -29,4 +29,11 @@ public class MethodExecutionMapperTest {
         assertThat(methodExecution.getExecutionTime()).isEqualTo(addMethodExecutionDto.getExecutionTime());
         assertThat(methodExecution.getExecutionTimestamp()).isEqualTo(addMethodExecutionDto.getExecutionTimestamp());
     }
+
+    @Test
+    public void testNullToMethodExecution() {
+        MethodExecution methodExecution = mapper.addDtoToMethodExecution(null);
+
+        assertThat(methodExecution).isNull();
+    }
 }
